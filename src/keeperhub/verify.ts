@@ -1,5 +1,7 @@
 import type { KeeperHubTrailEntry, TransactionProof } from '../domain/types';
 
+// this file contain the types of keeperhub verification and the function that will be used to verify the transaction
+// also to contain the logic of createTrailEntry function
 export type KeeperHubVerifyInput = {
   transactionId: string;
 };

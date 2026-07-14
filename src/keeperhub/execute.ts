@@ -1,5 +1,10 @@
 import type { KeeperHubTrailEntry } from '../domain/types';
 
+// this file contain the types of keeperhub execution and the function that will be used to execute the retry of the transaction
+// also to contain the logic of createTrailEntry function
+// also the executeKeeperHubRetry which decides wether to send the retry request to keeperhub or not based on the KEEPERHUB_URL env variable
+
+
 export type KeeperHubExecutionInput = {
   transactionId: string;
   payload?: Record<string, unknown>;
@@ -11,6 +16,7 @@ export type KeeperHubExecutionResult = {
   statusCode?: number;
   trail: KeeperHubTrailEntry[];
 };
+
 
 function createTrailEntry(step: string, detail: string): KeeperHubTrailEntry {
   return {
